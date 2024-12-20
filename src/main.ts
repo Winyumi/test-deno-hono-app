@@ -3,7 +3,7 @@ import { env } from "~/config.ts";
 
 const app = new Hono();
 
-app.get("/", (c) => c.text("Hello world!"));
+app.get("/", (c) => c.text(env.HELLO));
 
 Deno.serve({ port: env.PORT }, app.fetch);
 
